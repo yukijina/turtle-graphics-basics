@@ -4,8 +4,21 @@ import random
 speedy = Turtle()
 print(speedy)
 
+screen = Screen()
+
 speedy.shape("turtle")
 speedy.color("spring green")
+screen.colormode(255)
+
+def random_color():
+  """Generate a random color and return as a rgb list"""
+  r = random.randint(0,255)
+  g = random.randint(0,255)
+  b = random.randint(0,255)
+  
+  rgb_color = (r,g,b)
+  print(rgb_color)
+  return rgb_color
 
 def draw_dashline(line_length, dash_length, num):
   """draw a dashline with length of the parameter"""
@@ -57,11 +70,9 @@ def draw_a_random_walk():
 
   for _ in range(80):
     speedy.setheading(random.choice(direction)) 
-    speedy.pencolor(random.choice(color_pallets))
+    speedy.pencolor(random_color())
     speedy.forward(20)
    
 draw_a_random_walk()
 
-
-screen = Screen()
 screen.exitonclick()
