@@ -5,7 +5,7 @@ speedy = Turtle()
 print(speedy)
 
 speedy.shape("turtle")
-#speedy.color("red")
+speedy.color("spring green")
 
 def draw_dashline(line_length, dash_length, num):
   """draw a dashline with length of the parameter"""
@@ -37,16 +37,31 @@ def draw_pentagon(line_length):
 color_pallets = ["aquamarine", "green", "orange", "pink", "coral", "orchid", "gold"]
 
 def draw_shape(side_num, line_length):
-  """draw any shape"""
+  """draw any shape by incresing 1 side of the shape"""
   angle = 360 / side_num
   for _ in range(0,side_num):
     speedy.right(angle)
     speedy.forward(line_length)
+    
+  for _ in range(3,11):
+    speedy.color(random.choice(color_pallets))
 
+# draw_shape(shape_side_num, 100)
+  
+  
+def draw_a_random_walk():
+  """turtle walk in a random direction"""
+  speedy.pensize(10)
+  speedy.speed("fast")
+  direction = [0, 90,180,270]
 
-for shape_side_num in range(3,11):
-  speedy.color(random.choice(color_pallets))
-  draw_shape(shape_side_num, 100)
+  for _ in range(80):
+    speedy.setheading(random.choice(direction)) 
+    speedy.pencolor(random.choice(color_pallets))
+    speedy.forward(20)
+   
+draw_a_random_walk()
+
 
 screen = Screen()
 screen.exitonclick()
