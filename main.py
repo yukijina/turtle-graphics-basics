@@ -17,7 +17,6 @@ def random_color():
   b = random.randint(0,255)
   
   rgb_color = (r,g,b)
-  print(rgb_color)
   return rgb_color
 
 def draw_dashline(line_length, dash_length, num):
@@ -73,6 +72,41 @@ def draw_a_random_walk():
     speedy.pencolor(random_color())
     speedy.forward(20)
    
-draw_a_random_walk()
+#draw_a_random_walk()
+
+def draw_spirograph(size_of_gap):
+  """draw a spirograph shape"""
+  #speedy.shape("circle")
+  #speedy.shapesize(3,3)
+  #speedy.fillcolor("")
+  
+  speedy.speed("fastest")
+  
+  for _ in range(int(360 / size_of_gap)):
+    speedy.circle(50)
+    speedy.setheading(speedy.heading() + size_of_gap)
+    speedy.pencolor(random_color())
+    #speedy.stamp()
+
+#draw_spirograph(10)
+
+#draw_spirograph(10)
+
+def walk_circle():  
+  """ turtle walk in circle"""
+  #speedy.shape("circle")
+  speedy.shapesize(2,2)
+  speedy.fillcolor("")
+  speedy.speed("fast")
+  
+  for angle in range(360):
+    speedy.setheading(angle)
+    speedy.pencolor(random_color())
+    speedy.forward(3)
+    speedy.stamp()
+    
+walk_circle()
+
+
 
 screen.exitonclick()
