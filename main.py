@@ -98,8 +98,35 @@ def walk_circle():
     speedy.forward(3)
     speedy.stamp()
     
-walk_circle()
+#walk_circle()
+  
 
+def draw_dot_painting(dot_size, space_between_dot):
+  """draw a dot painting from left to right with a random color"""
+  speedy.color("")
+  speedy.goto(-200, -100)
+  
+  def set_heading(angle, space_between_dot):
+    speedy.setheading(90)
+    speedy.forward(space_between_dot)
+    speedy.setheading(angle)
+    speedy.forward(space_between_dot)
+ 
+  for counter in range(10):
+    
+    for _ in range(10):
+      speedy.dot(dot_size, random_color())
+      speedy.stamp()
+      speedy.forward(space_between_dot)
+      
+    if counter == 0 or not counter % 2:
+      #turn left
+      set_heading(180, space_between_dot)
+    else:
+      #turn right
+      set_heading(0, space_between_dot)
 
+    
+draw_dot_painting(20, 40)
 
 screen.exitonclick()
