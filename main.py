@@ -76,25 +76,18 @@ def draw_a_random_walk():
 
 def draw_spirograph(size_of_gap):
   """draw a spirograph shape"""
-  #speedy.shape("circle")
-  #speedy.shapesize(3,3)
-  #speedy.fillcolor("")
-  
   speedy.speed("fastest")
   
   for _ in range(int(360 / size_of_gap)):
     speedy.circle(50)
     speedy.setheading(speedy.heading() + size_of_gap)
     speedy.pencolor(random_color())
-    #speedy.stamp()
 
 #draw_spirograph(10)
 
-#draw_spirograph(10)
 
 def walk_circle():  
   """ turtle walk in circle"""
-  #speedy.shape("circle")
   speedy.shapesize(2,2)
   speedy.fillcolor("")
   speedy.speed("fast")
