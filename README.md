@@ -10,3 +10,4 @@
 - draw a random walk with different colors
 - draw a spirograpyh
 - draw a circle walk
+- draw a dot painting
